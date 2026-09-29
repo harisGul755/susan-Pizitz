@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandria, VA Therapist | Susan Pizitz LCSW - Children, Teens & Adult Counseling</title><meta name="description" content="In-person and telehealth therapy for children, teens, young adults, adults, and families in Alexandria, Virginia, specializing in EMDR, IFS, and CBT.">
+<style>
+/* ===========================================================
+   Susan Pizitz, LCSW — shared stylesheet
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --ink: #1F3450;
+  --plaster: #F4F6F9;
+  --paper: #FCFCFD;
+  --gold: #658bba;
+  --gold-soft: #A9C1DE;
+  --clay: #3E6493;
+  --charcoal: #29303A;
+  --charcoal-soft: #56616F;
+  --line: rgba(31, 52, 80, 0.14);
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: var(--plaster);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--ink);
+  margin: 0 0 0.5em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 400; line-height: 1.05; }
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); line-height: 1.15; }
+h3 { font-size: 1.3rem; font-weight: 600; }
+
+p { margin: 0 0 1.1em; max-width: 62ch; }
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 2px;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover { background: var(--gold); color: var(--ink); transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+
+/* ---------- Nav ---------- */
+header.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 246, 249, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.brand span { color: var(--gold); }
+
+nav.links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+nav.links a {
+  text-decoration: none;
+  color: var(--charcoal-soft);
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav.links a.active,
+nav.links a:hover {
+  color: var(--ink);
+}
+
+nav.links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: var(--gold);
+}
+
+nav.links a.nav-cta {
+  background: var(--ink);
+  color: var(--paper) !important;
+  padding: 10px 20px 10px !important;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.9rem !important;
+  line-height: 1.4;
+}
+nav.links a.nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.menu-toggle svg { stroke: var(--ink); }
+
+@media (max-width: 780px) {
+  nav.links {
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: var(--paper);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 32px;
+    gap: 26px;
+    transform: translateY(-110%);
+    transition: transform 0.35s ease;
+    border-bottom: 1px solid var(--line);
+  }
+  nav.links.open { transform: translateY(0); }
+  nav.links a { font-size: 1.1rem; }
+  .menu-toggle { display: block; }
+  .nav-cta { align-self: flex-start; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 88px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clay);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--charcoal-soft);
+  max-width: 46ch;
+  margin-top: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spiral-svg { width: 100%; height: auto; max-width: 420px; }
+.spiral-path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 260px; margin: 0 auto; order: -1; }
+}
+
+/* ---------- Trust bar ---------- */
+.trust-bar {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.trust-bar .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--charcoal-soft);
+  text-align: center;
+}
+.trust-bar span {
+  position: relative;
+  padding-right: 36px;
+}
+.trust-bar span:last-child { padding-right: 0; }
+.trust-bar span:not(:last-child)::after {
+  content: '·';
+  position: absolute;
+  right: -20px;
+  color: var(--gold);
+}
+@media (max-width: 640px) {
+  .trust-bar span::after { display: none; }
+  .trust-bar span { padding-right: 0; }
+}
+.trust-bar strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Sections ---------- */
+section { padding: 88px 0; }
+.section-plaster { background: var(--plaster); }
+.section-paper { background: var(--paper); }
+.section-ink { background: var(--ink); color: var(--paper); }
+.section-ink h2, .section-ink h3 { color: var(--paper); }
+.section-ink p { color: rgba(252, 252, 253, 0.78); }
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ---------- Three-panel (Philosophy/Expertise/Approach) ---------- */
+.panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.panel {
+  padding: 44px 36px 44px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.panel:not(:last-child) {
+  border-right: 1px solid var(--line);
+  padding-right: 40px;
+}
+.panel:not(:first-child) { padding-left: 40px; }
+
+.panel-arc {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 22px;
+}
+.panel-arc path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.panel-num {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--clay);
+  display: block;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 860px) {
+  .panels { grid-template-columns: 1fr; }
+  .panel, .panel:not(:last-child), .panel:not(:first-child) {
+    border-right: none;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* ---------- Cards (services) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.service-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 32px 30px;
+}
+.service-card h3 { margin-bottom: 12px; }
+.service-card p { margin-bottom: 0; color: var(--charcoal-soft); font-size: 0.98rem; }
+
+/* ---------- Two column (about) ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+.stat-row {
+  display: flex;
+  gap: 40px;
+  margin: 32px 0 8px;
+  flex-wrap: wrap;
+}
+.stat-row .stat strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+.stat-row .stat span {
+  font-size: 0.88rem;
+  color: var(--charcoal-soft);
+}
+
+.timeline {
+  border-left: 2px solid var(--line);
+  padding-left: 28px;
+  margin-top: 12px;
+}
+.timeline-item { margin-bottom: 26px; position: relative; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.timeline-item h4 { font-size: 1.02rem; margin-bottom: 4px; }
+.timeline-item p { font-size: 0.94rem; color: var(--charcoal-soft); margin: 0; }
+
+/* ---------- Modality tags ---------- */
+.tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.tag {
+  border: 1px solid var(--line);
+  padding: 8px 16px;
+  font-size: 0.86rem;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* ---------- Practical info (services page) ---------- */
+.info-list {
+  display: grid;
+  gap: 22px;
+}
+.info-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.info-row dt {
+  font-family: var(--serif);
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+.info-row dd { margin: 0; color: var(--charcoal-soft); }
+@media (max-width: 700px) {
+  .info-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* ---------- FAQ-style steps (contact) ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+.step { position: relative; padding-top: 28px; }
+.step .arc-mini { width: 34px; height: 34px; margin-bottom: 16px; }
+.step .arc-mini path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
+.step h4 { font-size: 1.05rem; margin-bottom: 8px; }
+.step p { font-size: 0.94rem; color: var(--charcoal-soft); margin: 0; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* ---------- Contact card ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.contact-detail {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-detail:first-child { padding-top: 0; }
+.contact-detail .icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+.contact-detail h4 { font-size: 0.95rem; margin-bottom: 4px; color: var(--ink); }
+.contact-detail p { margin: 0; color: var(--charcoal-soft); font-size: 0.96rem; }
+.contact-detail a { text-decoration: none; color: var(--charcoal-soft); border-bottom: 1px solid var(--line); }
+.contact-detail a:hover { color: var(--ink); border-color: var(--gold); }
+
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ---------- Insurance note box ---------- */
+.note-box {
+  background: var(--plaster);
+  border-left: 3px solid var(--gold);
+  padding: 22px 26px;
+  margin-top: 24px;
+}
+.note-box p { margin: 0; font-size: 0.94rem; color: var(--charcoal-soft); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  text-align: center;
+  padding: 100px 0;
+}
+.cta-band h2 { margin-bottom: 18px; }
+.cta-band p { margin: 0 auto 34px; }
+.cta-band .hero-actions { justify-content: center; }
+
+/* ---------- Footer ---------- */
+footer.site-footer {
+  background: var(--ink);
+  color: rgba(252, 252, 253, 0.7);
+  padding: 56px 0 32px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(252, 252, 253, 0.14);
+}
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--paper);
+}
+.footer-brand span { color: var(--gold); }
+.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links a { color: rgba(252, 252, 253, 0.72); text-decoration: none; font-size: 0.92rem; }
+.footer-links a:hover { color: var(--gold-soft); }
+.footer-bottom {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: rgba(252, 252, 253, 0.5);
+}
+
+/* ---------- Reveal animation (single orchestrated style, reused subtly) ---------- */
+.reveal { opacity: 0; transform: translateY(18px); }
+
+/* ---------- Page hero small (about/services/contact) ---------- */
+.page-hero {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--line);
+}
+.page-hero .eyebrow { margin-bottom: 14px; }
+.page-hero p { font-size: 1.08rem; color: var(--charcoal-soft); }
+
+/* ===========================================================
+   Homepage additions — intro banner, split sections, teasers, FAQ
+   =========================================================== */
+
+.intro-banner {
+  padding: 72px 0 48px;
+}
+.intro-banner .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.intro-banner h1 { margin-bottom: 0; }
+.intro-banner-text { max-width: 560px; }
+.intro-banner .hero-actions { margin-top: 30px; }
+
+.intro-visual { position: relative; }
+.intro-visual .media-frame img { aspect-ratio: 4 / 3; }
+
+.intro-mark-badge {
+  position: absolute;
+  left: -26px;
+  bottom: -26px;
+  width: 150px;
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 18px 20px 12px;
+  box-shadow: 0 20px 44px -20px rgba(31, 52, 80, 0.45);
+}
+.intro-mark { width: 100%; height: auto; opacity: 0.95; }
+.intro-mark path { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; }
+
+@media (max-width: 900px) {
+  .intro-banner .wrap { grid-template-columns: 1fr; }
+  .intro-visual { order: -1; max-width: 420px; margin: 0 auto; }
+  .intro-mark-badge { width: 110px; left: -16px; bottom: -16px; }
+}
+
+/* Split section: alternating image/text rows used for Reflect/Recover/Reconnect
+   and Philosophy/Expertise/Approach */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.split.reverse .split-media { order: 2; }
+.split.reverse .split-content { order: 1; }
+.split-content .word-arc { width: 40px; height: 40px; margin-bottom: 20px; }
+.split-content .word-arc path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
+.split-content h2 { margin-bottom: 18px; }
+.split-content p { color: var(--charcoal-soft); }
+
+@media (max-width: 860px) {
+  .split, .split.reverse .split-media, .split.reverse .split-content {
+    grid-template-columns: 1fr;
+    order: initial;
+  }
+  .split { grid-template-columns: 1fr; }
+  .split-media img { height: 300px; }
+}
+
+.split-row + .split-row { margin-top: 96px; }
+
+/* Teaser sections (services / about) */
+.teaser {
+  max-width: 640px;
+}
+.teaser p { color: var(--charcoal-soft); }
+.teaser-center { max-width: 680px; margin: 0 auto; text-align: center; }
+.teaser-center p { margin-left: auto; margin-right: auto; }
+
+.about-teaser {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .about-teaser { grid-template-columns: 1fr; }
+}
+
+/* FAQ accordion */
+.faq-list {
+  max-width: 760px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-item summary {
+  cursor: pointer;
+  padding: 24px 0;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  padding: 0 0 24px;
+  color: var(--charcoal-soft);
+  max-width: 68ch;
+}
+
+/* Home contact section */
+.home-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .home-contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ===========================================================
+   Services page — per-service feature rows
+   =========================================================== */
+.service-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--line);
+}
+.service-feature:first-child { padding-top: 0; }
+.service-feature.reverse .sf-media { order: 2; }
+.service-feature.reverse .sf-content { order: 1; }
+.sf-content h3 { margin-bottom: 14px; }
+.sf-content p { color: var(--charcoal-soft); }
+@media (max-width: 800px) {
+  .service-feature, .service-feature.reverse .sf-media, .service-feature.reverse .sf-content {
+    grid-template-columns: 1fr;
+    order: initial;
+  }
+  .service-feature { grid-template-columns: 1fr; padding: 44px 0; }
+  .sf-media img { height: 260px; }
+}
+
+/* ===========================================================
+   Media frames — rounded corners, filler padding, shape variety
+   =========================================================== */
+.media-frame {
+  background: var(--paper);
+  padding: 14px;
+  border-radius: 26px;
+  box-shadow: 0 28px 54px -30px rgba(31, 52, 80, 0.45);
+}
+.media-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.media-frame:hover img { transform: scale(1.04); }
+
+.media-frame.shape-circle {
+  border-radius: 50%;
+  padding: 14px;
+  width: min(100%, 420px);
+  margin: 0 auto;
+}
+.media-frame.shape-circle img {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.media-frame.shape-square {
+  width: min(100%, 440px);
+  margin: 0 auto;
+  border-radius: 20px;
+}
+.media-frame.shape-square img {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+}
+
+/* filler frame reads correctly against a dark section too */
+.section-ink .media-frame {
+  background: var(--plaster);
+  box-shadow: 0 28px 54px -26px rgba(0, 0, 0, 0.55);
+}
+
+/* ===========================================================
+   Dark (ink) section text-safety overrides — ensures beige text
+   stays legible regardless of source order elsewhere in this file
+   =========================================================== */
+.section-ink .split-content p,
+.section-ink .about-teaser p,
+.section-ink .teaser p {
+  color: rgba(252, 252, 253, 0.78);
+}
+.section-ink .eyebrow { color: var(--gold-soft); }
+.section-ink .btn-ghost {
+  color: var(--paper);
+  border-color: rgba(252, 252, 253, 0.5);
+}
+.section-ink .btn-ghost:hover { background: var(--paper); color: var(--ink); }
+.section-ink .tag {
+  background: rgba(252, 252, 253, 0.08);
+  border-color: rgba(252, 252, 253, 0.25);
+  color: var(--paper);
+}
+.section-ink .word-arc path,
+.section-ink .panel-arc path,
+.section-ink .arc-mini path { stroke: var(--gold-soft); }
+
+/* ===========================================================
+   Motion — richer, more visible scroll interactions
+   =========================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+}
+.reveal-media {
+  opacity: 0;
+}
+.reveal-media.from-left { transform: translateX(-48px); }
+.reveal-media.from-right { transform: translateX(48px); }
+.reveal-content {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* subtle idle life on the intro spiral once it has drawn in */
+@keyframes floatMark {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.intro-mark-badge.floating { animation: floatMark 6s ease-in-out infinite; }
+
+/* faq items get a slight lift on open for tactile feedback */
+.faq-item summary { transition: color 0.25s ease; }
+.faq-item:hover summary { color: var(--gold); }
+
+/* ===== Susan Pizitz brand layer: #658bba with light/dark shades ===== */
+:root{--brand:#658bba;--brand-dark:#3E6493;--brand-mist:#E8EFF7}
+.brand img{height:46px;width:auto}
+.btn{border-radius:999px}
+.btn-primary{background:linear-gradient(135deg,#658bba,#3E6493);color:#fff}
+.btn-primary:hover{background:linear-gradient(135deg,#7699c5,#4a72a3);color:#fff}
+.btn-ghost{color:var(--brand-dark);border-color:var(--brand)}
+.btn-ghost:hover{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
+.btn-light{background:#fff;color:var(--ink)}.btn-light:hover{background:var(--brand-mist);transform:translateY(-2px)}
+nav.links a.nav-cta{background:linear-gradient(135deg,#658bba,#3E6493);color:#fff!important;border-radius:999px}
+nav.links a.nav-cta:hover{background:var(--ink)!important;color:#fff!important}
+.intro-banner{background:linear-gradient(160deg,#FCFCFD 0%,#E8EFF7 100%)}
+.section-ink{background:linear-gradient(135deg,#1F3450 0%,#2F4C73 100%)}
+footer.site-footer{background:linear-gradient(135deg,#1A2C44,#1F3450)}
+.footer-tag{font-family:var(--sans);font-size:.85rem;color:rgba(252,252,253,.6);margin:8px 0 0}
+.section-ink .btn-primary{color:#fff}
+.section-ink .eyebrow{color:var(--gold-soft)}
+.eyebrow{color:var(--brand-dark)}
+.offer-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.offer-card{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.offer-card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(31,52,80,.5)}
+.offer-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.offer-card div{padding:22px 24px 26px}.offer-card h3{font-size:1.1rem;margin-bottom:8px}
+.offer-card p{margin:0;font-size:.93rem;color:var(--charcoal-soft)}
+.quote{margin:48px 0 0;max-width:760px;font-family:var(--serif);font-size:1.35rem;line-height:1.5;color:#fff;border-left:3px solid var(--brand);padding-left:26px}
+.contact-form{display:grid;gap:16px;background:var(--plaster);padding:32px;border-radius:20px}
+.contact-form label{display:grid;gap:6px;font-size:.9rem;font-weight:600;color:var(--ink)}
+.contact-form input,.contact-form select,.contact-form textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--charcoal)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus,a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.contact-form button{justify-self:start;border:0;cursor:pointer}
+.contact-detail .icon{display:none}
+.service-feature{scroll-margin-top:90px}
+.tag{border-radius:999px;background:var(--brand-mist);border-color:transparent;color:var(--brand-dark)}
+.section-ink .tag{background:rgba(255,255,255,.1);color:#fff}
+.note-box{background:var(--brand-mist)}
+
+/* ===== Round 2 changes ===== */
+body{overflow-x:clip}
+nav.links a.nav-cta::after{display:none!important}
+/* about photo: bigger, never cropped */
+.two-col{grid-template-columns:1fr 1.05fr;gap:56px}
+.about-photo img{aspect-ratio:auto;height:auto;object-fit:contain;width:100%}
+.about-photo:hover img{transform:none}
+/* meet Susan: bigger portrait */
+.about-teaser{grid-template-columns:1fr 1fr;gap:64px}
+.about-teaser .media-frame.shape-circle{width:min(100%,560px)}
+/* therapy page: alternating dark sections */
+.feature-section .service-feature{padding:0;border-bottom:0}
+.section-ink .sf-content p{color:rgba(252,252,253,.82)}
+.section-ink .sf-content h3{color:#fff}
+/* trust bar: static on desktop */
+.trust-bar .wrap.trust-track{display:block}
+.trust-group{display:flex;flex-wrap:wrap;gap:10px 36px;justify-content:center;align-items:center}
+.trust-group[aria-hidden]{display:none}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media (max-width:900px){
+  .intro-visual{order:0;max-width:none;margin:0}
+  .about-teaser .media-frame.shape-circle{width:min(100%,420px)}
+}
+/* ===== Mobile ===== */
+@media (max-width:860px){
+  .split .split-media,.split.reverse .split-media,
+  .service-feature .sf-media,.service-feature.reverse .sf-media{order:2}
+  .split .split-content,.split.reverse .split-content,
+  .service-feature .sf-content,.service-feature.reverse .sf-content{order:1}
+  .about-teaser .media-frame{order:2}
+  .two-col>div:first-child{order:2}
+  .two-col{gap:36px}
+}
+@media (max-width:780px){
+  section{padding:56px 0}
+  .wrap{padding:0 20px}
+  .nav-inner{padding:12px 20px}
+  .brand img{height:38px}
+  nav.links{position:absolute;inset:100% 0 auto 0;transform:none;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:0 24px;max-height:0;overflow:hidden;visibility:hidden;opacity:0;border-bottom:0;transition:max-height .35s ease,opacity .25s ease,padding .35s ease,visibility .35s}
+  nav.links.open{transform:none;max-height:480px;padding:8px 24px 24px;visibility:visible;opacity:1;border-bottom:1px solid var(--line);box-shadow:0 24px 40px -24px rgba(31,52,80,.4)}
+  nav.links a{font-size:1.05rem;padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  nav.links a.active::after{display:none}
+  nav.links a.active{color:var(--brand-dark);font-weight:600}
+  nav.links a.nav-cta{text-align:center;margin-top:16px;border-bottom:0;padding:14px 20px!important;justify-content:center}
+  .menu-toggle{display:block}
+  h1{font-size:2.1rem}
+  .intro-banner{padding:40px 0 32px}
+  .page-hero{padding:48px 0 36px}
+  .hero-actions{margin-top:26px}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .media-frame{padding:10px;border-radius:20px}
+  .media-frame img{border-radius:12px}
+  .split{gap:28px}.split-row+.split-row{margin-top:56px}
+  .service-feature{gap:28px}
+  .cta-band{padding:64px 0}
+  .contact-form{padding:22px}
+  .footer-top{flex-direction:column;gap:24px}
+  .footer-links{gap:16px 24px}
+  .footer-bottom{flex-direction:column}
+  /* trust bar marquee */
+  .trust-bar{overflow:hidden;padding:18px 0}
+  .trust-bar .wrap.trust-track{display:flex;width:max-content;max-width:none;margin:0;padding:0;animation:marquee 24s linear infinite}
+  .trust-group,.trust-group[aria-hidden]{display:flex;flex-wrap:nowrap;gap:44px;padding-right:44px;justify-content:flex-start}
+  .trust-bar span{white-space:nowrap;padding-right:0}
+  .trust-bar span::after{display:none}
+}
+@media (max-width:780px) and (prefers-reduced-motion:reduce){
+  .trust-bar{overflow-x:auto}
+  .trust-bar .wrap.trust-track{animation:none}
+}
+
+/* ===== Round 3: horizontal slider + hero background ===== */
+.hs-layout{--vis:3;--gap:24px}
+.hs-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.hs-intro h2{margin-bottom:10px}.hs-intro p{margin:0}
+.hs-controls{display:flex;gap:12px}
+.hs-btn{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--brand);background:#fff;color:var(--brand-dark);cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
+.hs-btn:hover{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+.h-slider{overflow:hidden;padding:6px 0 10px}
+.h-track{display:flex;gap:var(--gap);will-change:transform}
+.h-slider .offer-card{flex:0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis))}
+.h-slider .offer-card:hover{transform:none;box-shadow:none;border-color:var(--brand)}
+@media (max-width:900px){.hs-layout{--vis:2;--gap:18px}}
+@media (max-width:600px){.hs-layout{--vis:1;--gap:16px}.hs-intro{align-items:flex-start}}
+/* hero: natural background photo under a soft off-white wash so text stays readable */
+.intro-banner{background:linear-gradient(100deg,rgba(252,252,253,.95) 0%,rgba(244,246,249,.84) 48%,rgba(232,239,247,.45) 100%),url("https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/ab207a42-e09f-46c9-8593-afaca434d7f8/jeremy-bishop-EwKXn5CapA4-unsplash.jpeg?format=1500w") center/cover no-repeat}
+@media (max-width:900px){.intro-banner{background:linear-gradient(180deg,rgba(252,252,253,.93),rgba(244,246,249,.86)),url("https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/ab207a42-e09f-46c9-8593-afaca434d7f8/jeremy-bishop-EwKXn5CapA4-unsplash.jpeg?format=1500w") center/cover no-repeat}}
+
+/* ===== Round 4: fix two-column sections not stacking on mobile ===== */
+@media (max-width:860px){
+  .two-col{grid-template-columns:1fr}
+  .about-teaser{grid-template-columns:1fr;gap:32px;justify-items:center}
+  .about-teaser>div:last-child{justify-self:stretch}
+  .about-teaser .media-frame,.about-teaser .media-frame.shape-circle{order:0;width:min(100%,340px)}
+}
+
+</style></head><body>
+<header class="site-nav"><div class="nav-inner">
+<a href="index.html" class="brand"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/ca2c27dc-c227-4421-9c2c-fd946a528cc3/Susan+Pizitz+Logo+copy.png?format=600w" alt="Susan Pizitz, LCSW"></a>
+<nav class="links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Therapy</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Book your free consultation</a></nav>
+<button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div></header><main>
+
+<section class="intro-banner"><div class="wrap">
+<div class="intro-banner-text"><span class="eyebrow hero-eyebrow">Licensed Clinical Social Worker in Alexandria, Virginia</span>
+<h1 class="hero-title">Compassionate counseling for children, teens, and adults.</h1>
+<p class="hero-sub">In-person and telehealth therapy specializing in EMDR, IFS, and CBT, to improve emotional well-being, strengthen relationships, and build practical strategies for anxiety, depression, trauma, and life transitions.</p>
+<div class="hero-actions"><a href="contact.html" class="btn btn-primary">Book your free consultation</a><a href="services.html" class="btn btn-ghost">Explore therapy</a></div></div>
+<div class="intro-visual"><div class="media-frame"><img src="https://images.pexels.com/photos/4098371/pexels-photo-4098371.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A therapist and client sitting together in a calm, supportive counseling conversation"></div></div>
+</div></section>
+<div class="trust-bar"><div class="wrap trust-track"><div class="trust-group"><span><strong>30+ years</strong> of clinical experience</span><span><strong>EMDR</strong> and <strong>IFS</strong> trained</span><span>In-person and <strong>telehealth</strong> (Virginia and Utah)</span><span><strong>Free</strong> 15-minute consultation</span></div><div class="trust-group" aria-hidden="true"><span><strong>30+ years</strong> of clinical experience</span><span><strong>EMDR</strong> and <strong>IFS</strong> trained</span><span>In-person and <strong>telehealth</strong> (Virginia and Utah)</span><span><strong>Free</strong> 15-minute consultation</span></div></div></div>
+<section class="section-paper"><div class="wrap"><div class="split split-row">
+<div class="split-media reveal-media from-left"><div class="media-frame"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/1727409039670-2XDB5SVKVVC99EGBKAU8/image-asset.jpeg?format=1000w" alt="Calm, welcoming therapy space"></div></div>
+<div class="split-content reveal-content"><h2>Welcome!</h2>
+<p>I’m Susan, a licensed clinical social worker based in Alexandria, Virginia. I offer in-person counseling at my cozy, sunlit office, as well as virtual sessions for residents of Virginia and Utah.</p>
+<p>Whether you’re feeling stuck, overwhelmed, emotionally exhausted, or ready to move forward from past experiences, I offer a safe, supportive space where you can explore what’s going on and move toward meaningful change.</p>
+<a href="about.html" class="btn btn-ghost">More about Susan</a></div></div></div></section>
+<section class="section-plaster"><div class="wrap hs-layout"><div class="hs-intro reveal"><h2>Therapy for every stage of life</h2><p>Support for children, teens, young adults, adults, and families, tailored to your goals.</p><div class="hs-controls"><button class="hs-btn hs-prev" type="button" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button class="hs-btn hs-next" type="button" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div></div><div class="h-slider reveal"><div class="h-track"><a class="offer-card" href="services.html#children"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/ff3db5dd-bd82-4c99-81f1-47ae3f7ce7db/AdobeStock_84417253.jpeg?format=1000w" alt="Therapy for Children"><div><h3>Therapy for Children</h3><p>Play, CBT, and trauma-focused therapy that helps children understand their feelings and flourish.</p></div></a><a class="offer-card" href="services.html#teens"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/643d48cf-4b25-4bfb-91d9-36f112d0ee19/AdobeStock_393392682.jpeg?format=1000w" alt="Therapy for Teens"><div><h3>Therapy for Teens</h3><p>A safe space to process emotions, build healthy relationships, and develop a positive sense of self.</p></div></a><a class="offer-card" href="services.html#young-adults"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/37f1d5b6-569f-4f49-b7de-2bbdc4b573f8/AdobeStock_574139185.jpeg?format=1000w" alt="Therapy for Young Adults"><div><h3>Therapy for Young Adults</h3><p>Support through identity, professional goals, life pressures, and relationships.</p></div></a><a class="offer-card" href="services.html#adults"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/9def558a-154e-4747-9d21-29a6375f184a/AdobeStock_537846622.jpeg?format=1000w" alt="Therapy for Adults"><div><h3>Therapy for Adults</h3><p>Tools for anxiety, depression, trauma, and life transitions, at your own pace.</p></div></a><a class="offer-card" href="services.html#families"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/b5883d98-004e-4d8e-8527-e8791dbd96ff/AdobeStock_312665527.jpeg?format=1000w" alt="Therapy for Families"><div><h3>Therapy for Families</h3><p>Stronger communication and a more connected, supportive home.</p></div></a></div></div></div></section>
+<section class="section-ink"><div class="wrap"><div class="section-head reveal"><h2>Specialties and approach</h2><p>Evidence-based, trauma-informed care, individualized to your goals and areas of focus.</p></div>
+<div class="tag-row reveal"><span class="tag">Anxiety</span><span class="tag">Depression</span><span class="tag">Mood Disorders</span><span class="tag">Life Transitions</span><span class="tag">Family and Relationships</span><span class="tag">School Issues</span><span class="tag">Emotional Dysregulation</span><span class="tag">EMDR</span><span class="tag">IFS</span></div>
+<blockquote class="quote reveal">“Susan’s compassion and understanding are transformative. She listens, empathizes, and offers invaluable support, bringing me comfort and clarity. I’m deeply grateful for her guidance.”</blockquote></div></section>
+<section class="section-paper"><div class="wrap about-teaser reveal"><div class="media-frame shape-circle"><img src="https://images.squarespace-cdn.com/content/v1/65086dbf07829b4d76ee5975/64529773-e446-4291-b526-dd3bbbf08724/i-tsRMqQ4-X4.jpg?format=1000w" alt="Susan Pizitz, LCSW"></div><div><h2>Meet Susan Pizitz, LCSW</h2>
+<p>With over 30 years of clinical experience, including roles as a clinical director of children’s services and a school-based mental health specialist, I bring compassion, flexibility, and deep respect for each person’s story. My approach is collaborative, practical, and attuned to your needs.</p><a href="about.html" class="btn btn-primary">Read Susan’s story</a></div></div></section>
+<section class="section-plaster"><div class="wrap"><div class="section-head reveal"><h2>Common questions</h2><p>A few things people usually want to know before reaching out.</p></div><div class="faq-list reveal"><details class="faq-item"><summary>How do I get started?</summary><p>I offer a free 15-minute consultation. Fill out the contact form and I will get back to you as quickly as possible.</p></details><details class="faq-item"><summary>What type of therapy do you offer?</summary><p>I specialize in therapy for children, teens, young adults, adults, and families. My practice model incorporates EMDR, Internal Family Systems, Acceptance and Commitment Therapy, Cognitive Behavioral Therapy, Attachment-Based Therapy, Mindfulness, Motivational Interviewing, Person-Centered, Strength-Based, Humanistic, and Play Therapy, and Structural Family Therapy.</p></details><details class="faq-item"><summary>Do you accept insurance?</summary><p>My practice is private pay only, and I do not accept insurance. Clients can be considered on a sliding fee scale, and I can provide a superbill to submit to your insurance company for reimbursement. I want therapy to be accessible and affordable for you.</p></details><details class="faq-item"><summary>How much does therapy cost?</summary><p>Assessment: $175. Individual therapy (60 min): $125. Collateral therapy, parent only (60 min): $125. Family therapy (60 min): $175. Consultations (15–60 min) are prorated.</p></details><details class="faq-item"><summary>What is your cancellation policy?</summary><p>Please give at least 24 hours’ notice to avoid a fee. Cancellations made less than 24 hours in advance are charged the full session fee.</p></details></div></div></section>
+<section class="section-paper"><div class="wrap home-contact-grid"><div class="reveal"><h2>Let’s connect</h2><p>Request a free 15-minute consultation. It’s a simple first step, with no obligation.</p><a href="contact.html" class="btn btn-primary">Book your free consultation</a></div>
+<div class="reveal"><div class="contact-detail"><div><h4>Phone</h4><p><a href="tel:8016949904">(801) 694-9904</a></p></div></div><div class="contact-detail"><div><h4>Email</h4><p><a href="mailto:susan@susanpizitz.com">susan@susanpizitz.com</a></p></div></div><div class="contact-detail"><div><h4>Office</h4><p>218 N Lee Street (Crilley Warehouse) #323<br>Alexandria, VA 22314</p></div></div></div></div></section>
+</main><footer class="site-footer"><div class="wrap">
+<div class="footer-top"><div class="footer-brand">Susan Pizitz <span>LCSW</span><p class="footer-tag">Where Growth Begins and Well-being Flourishes</p></div>
+<div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Therapy</a><a href="contact.html">Contact</a><a href="https://www.psychologytoday.com/profile/1215842" target="_blank" rel="noopener">Psychology Today</a></div></div>
+<div class="footer-bottom"><span>© 2026 Susan Pizitz. All rights reserved.</span><span>218 N Lee Street #323, Alexandria, VA 22314</span></div>
+</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+// ===========================================================
+// Susan Pizitz, LCSW — shared behavior
+// ===========================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ---------- Mobile nav ----------
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav.links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+      const expanded = links.classList.contains('open');
+      toggle.setAttribute('aria-expanded', expanded);
+      toggle.innerHTML = expanded
+        ? '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>'
+        : '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => links.classList.remove('open'));
+    });
+  }
+
+  // ---------- GSAP setup ----------
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // The single orchestrated hero moment: the golden spiral draws itself in,
+    // then settles into a gentle, continuous float so the top of the page
+    // never feels static.
+    const spiralPath = null;
+    if (document.querySelector('.hero-title')) {
+      gsap.timeline({ defaults: { ease: 'power2.out' } })
+        .from('.hero-eyebrow', { opacity: 0, y: 14, duration: 0.6 }, 0.1)
+        .from('.hero-title', { opacity: 0, y: 22, duration: 0.75 }, 0.25)
+        .from('.hero-sub', { opacity: 0, y: 16, duration: 0.6 }, 0.5)
+        .from('.hero-actions .btn', { opacity: 0, y: 14, duration: 0.5, stagger: 0.1 }, 0.7)
+        .from('.intro-visual', { opacity: 0, x: 40, duration: 1, ease: 'power3.out' }, 0.2);
+    }
+    if (spiralPath) {
+      const length = spiralPath.getTotalLength();
+      gsap.set(spiralPath, { strokeDasharray: length, strokeDashoffset: length });
+
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+      tl.from('.intro-visual', { opacity: 0, x: 40, duration: 1, ease: 'power3.out' }, 0)
+        .to(spiralPath, { strokeDashoffset: 0, duration: 1.8, ease: 'power3.inOut' }, 0.3)
+        .from('.hero-eyebrow', { opacity: 0, y: 14, duration: 0.6 }, 0.15)
+        .from('.hero-title', { opacity: 0, y: 22, duration: 0.75 }, 0.3)
+        .from('.hero-sub', { opacity: 0, y: 16, duration: 0.6 }, 0.55)
+        .from('.hero-actions .btn', { opacity: 0, y: 14, duration: 0.5, stagger: 0.1 }, 0.75)
+        .call(() => {
+          const mark = document.querySelector('.intro-mark-badge');
+          if (mark) mark.classList.add('floating');
+        });
+    } else {
+      // pages without the hero spiral still get a gentle title/sub entrance
+      gsap.from('.page-hero .reveal-in', {
+        opacity: 0, y: 18, duration: 0.7, stagger: 0.12, ease: 'power2.out'
+      });
+    }
+
+    // Generic scroll reveal: fade + rise, once each.
+    gsap.utils.toArray('.reveal').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          once: true
+        }
+      });
+    });
+
+    // Directional reveal for split/service-feature rows: the image glides in
+    // from the side it sits on, the text rises a beat after — gives every
+    // alternating section its own small entrance rather than a uniform fade.
+    gsap.utils.toArray('.reveal-media').forEach((el) => {
+      const fromRight = el.classList.contains('from-right');
+      gsap.set(el, { x: fromRight ? 48 : -48 });
+      gsap.to(el, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el.closest('.split-row, .service-feature') || el,
+          start: 'top 82%',
+          once: true
+        }
+      });
+    });
+
+    gsap.utils.toArray('.reveal-content').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        delay: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el.closest('.split-row, .service-feature') || el,
+          start: 'top 82%',
+          once: true
+        }
+      });
+    });
+
+    // Stagger the FAQ list and modality tags as a group, and the trust-bar
+    // items on first load, for a livelier feel than a flat block fade.
+    if (document.querySelector('.faq-list')) {
+      gsap.from('.faq-item', {
+        opacity: 0,
+        y: 16,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '.faq-list', start: 'top 85%', once: true }
+      });
+    }
+    if (document.querySelector('.tag-row')) {
+      gsap.from('.tag-row .tag', {
+        opacity: 0,
+        y: 10,
+        duration: 0.5,
+        stagger: 0.06,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '.tag-row', start: 'top 90%', once: true }
+      });
+    }
+    if (document.querySelector('.trust-bar')) {
+      gsap.from('.trust-bar span', {
+        opacity: 0,
+        y: 8,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'power2.out',
+        delay: 0.2
+      });
+    }
+
+    // Small arc/spiral accents draw in as their section enters view
+    document.querySelectorAll('.panel-arc path, .arc-mini path, .word-arc path').forEach((path) => {
+      const len = path.getTotalLength();
+      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        duration: 1.1,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: path.closest('.panel, .step, .split-content, .intro-banner') || path,
+          start: 'top 85%',
+          once: true
+        }
+      });
+    });
+  }
+
+  // ---------- Horizontal slider (therapy cards) ----------
+  document.querySelectorAll('.h-slider').forEach((s) => {
+    const track = s.querySelector('.h-track');
+    const n = track.children.length, vis = 3;
+    Array.from(track.children).slice(0, vis).forEach((c) => {
+      const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.tabIndex = -1; track.appendChild(k);
+    });
+    let i = 0, locked = false, timer = null;
+    const stepPx = () => track.children[0].offsetWidth + (parseFloat(getComputedStyle(track).columnGap) || 0);
+    const go = (to, anim) => {
+      track.style.transition = anim ? 'transform .7s cubic-bezier(.65,0,.35,1)' : 'none';
+      track.style.transform = 'translateX(' + (-to * stepPx()) + 'px)';
+    };
+    const next = () => {
+      if (locked) return; locked = true; i++; go(i, true);
+      setTimeout(() => { if (i >= n) { i = 0; go(0, false); } locked = false; }, 720);
+    };
+    const prev = () => {
+      if (locked) return; locked = true;
+      if (i === 0) { i = n; go(i, false); void track.offsetHeight; }
+      i--; go(i, true); setTimeout(() => { locked = false; }, 720);
+    };
+    const start = () => { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { clearInterval(timer); timer = setInterval(next, 3500); } };
+    const stop = () => clearInterval(timer);
+    const nb = document.querySelector('.hs-next'), pb = document.querySelector('.hs-prev');
+    if (nb) nb.addEventListener('click', () => { next(); start(); });
+    if (pb) pb.addEventListener('click', () => { prev(); start(); });
+    s.addEventListener('mouseenter', stop); s.addEventListener('mouseleave', start);
+    s.addEventListener('focusin', stop); s.addEventListener('focusout', start);
+    window.addEventListener('resize', () => go(i, false));
+    start();
+  });
+
+  // ---------- Sticky nav active state ----------
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav.links a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!a.classList.contains('nav-cta') && (href === current || (current === '' && href === 'index.html'))) {
+      a.classList.add('active');
+    }
+  });
+});
+
+</script></body></html>
